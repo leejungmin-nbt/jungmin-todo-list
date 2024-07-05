@@ -26,11 +26,14 @@ export default function Home() {
   return (
     <>
       <Container>
-        <Typography variant='h3'>
-          to do ~
-        </Typography>
-        <TodoForm addTodo={handleAddTodo}/>
-        <TodoItemList />
+        <div style={{display: 'flex', flexDirection:'column'}}>
+          <Typography variant='h3'>
+            N___BT - 정민
+          </Typography>
+          <div style={{width: '100%', margin: '20px 0px'}}/>
+          <TodoForm addTodo={handleAddTodo}/>
+          <TodoItemList />
+        </div>
       </Container>
     </>
     

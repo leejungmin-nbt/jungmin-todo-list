@@ -23,14 +23,16 @@ const TodoForm = ({ addTodo }: IProps) => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <TextField
-        variant="outlined"
-        label="New Todo"
-        value={title}
-        onChange={(e) => setTitle(e.target.value)}
-        fullWidth
-      />
-      <Button type="submit" variant="contained" color="primary">Add</Button>
+        <div style={{display: 'flex'}}>
+            <TextField
+                variant="outlined"
+                label="New Todo"
+                value={title}
+                onChange={(e) => setTitle(e.target.value)}
+                fullWidth
+            />
+            <Button type="submit" variant="contained" color="primary">Add</Button>
+        </div>
     </form>
   );
 };
