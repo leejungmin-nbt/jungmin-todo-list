@@ -13,18 +13,18 @@ export const getItems = async() => {
 
 export const addItem = async(todo: ITodosItem) => {
     const res = await baseApi.post('/todos', todo);
-    console.log('res >> ', res)
-    return res.data;
-}
-
-export const updateItem = async() => {
-    const res = await baseApi.put('/todos');
 
     return res.data;
 }
 
-export const deleteItem = async() => {
-    const res = await baseApi.delete('/todos');
+export const updateItem = async(todo: ITodosItem) => {
+    const res = await baseApi.put(`/todos`, todo);
+
+    return res.data;
+}
+
+export const deleteItem = async(todo: ITodosItem) => {
+    const res = await baseApi.patch(`/todos/`, todo);
 
     return res.data;
 }
