@@ -21,7 +21,7 @@ export default function Home() {
   const handleChangeItem = async(type: TChangeMethod, selectedTodo: ITodosItem) => {
     if(type === 'update') {
       const newTodo = await updateItem(selectedTodo);
-      setTodos(todos.map((todo) => (todo.title === selectedTodo.title ? newTodo : todo)));
+      setTodos(todos.map((todo) => (todo.id === selectedTodo.id ? newTodo : todo)));
 
       return;
     }

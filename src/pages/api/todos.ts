@@ -17,7 +17,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
       res.status(200).json(newTodo);
       break;
     case 'PUT':
-      const idx = todos.findIndex((todo) => todo.title === body.title);
+      const idx = todos.findIndex((todo) => todo.id === body.id);
 
       if(idx !== -1) {
           todos[idx] = {...todos[idx], ...body}
@@ -28,8 +28,8 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
       break;
     //삭제를 라우터 핸들링 문제로 PATCH로 사용
     case 'PATCH':
-      const removeIdx = todos.findIndex((todo) => todo.title === body.title);
-      const result = todos.filter((todo) => todo.title !== body.title);
+      const removeIdx = todos.findIndex((todo) => todo.id === body.id);
+      const result = todos.filter((todo) => todo.id !== body.id);
 
       if(removeIdx !== -1) {
           todos = result;

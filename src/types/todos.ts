@@ -1,7 +1,7 @@
 export type TChangeMethod = 'update' | 'delete';
 
 export interface ITodosItem {
-    id?: number;
+    id: string;
     title: string;
     completed: boolean;
     createdAt: any;

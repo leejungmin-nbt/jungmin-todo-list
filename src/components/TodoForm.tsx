@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { TextField, Button } from '@mui/material';
 import {ITodosItem} from '@/types/todos';
+import uuid from 'react-uuid';
 
 interface IProps {
     addTodo: (values: ITodosItem) => void;
@@ -13,6 +14,7 @@ const TodoForm = ({ addTodo }: IProps) => {
     e.preventDefault();
     if (title.trim()) {
       addTodo({
+        id: uuid(),
         title,
         completed: false,
         createdAt: new Date()
